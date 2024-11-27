@@ -1,3 +1,8 @@
+<?php
+// Verificar estatus de conexión
+include('../config/conexion.php');
+$estatus_servidor = isset($conn) ? "Conectado" : "Desconectado";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <nav><p>Estatus conexion a Servidor:</p></nav>
+    <nav><p>Estatus conexion a Servidor:<?php echo $estatus_servidor; ?></p> 
+        <p><a href="../src/controllers/logout.php">Cerrar sesión</a></p></nav>
     <main>
         <section class="main2">
             <div class="relleno">
@@ -25,7 +31,7 @@
                 
                 <div class="buttons">
                     
-                    <button class="accions" onclick="window.location.href='./carta_porte.html'">GENERAR CARTA PORTE A UNIDADES</button>
+                    <button class="accions" onclick="window.location.href='./carta_porte.php'">GENERAR CARTA PORTE A UNIDADES</button>
                     <button class="accions">REPORTE QUINCENAL CARTA PORTE</button>
                     <button class="accions">AGREGAR UNIDAD CARGA</button>
                     <button class="accions">RASTREO DE UNIDADES</button>

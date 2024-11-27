@@ -209,12 +209,12 @@ main{
     align-items: center;
     margin-left: 100px;
 }
-.formulario{
+.formulario form{
     display: flex;
     height: 200px;
     width: 100%;
 }
-.formulario form{
+.formulario form .form1{
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
     gap: 5px; /* Espaciado entre columnas y filas */
@@ -225,12 +225,15 @@ main{
     flex: 1;
     flex-direction: column;
 }
-.buttons img{
+.buttons1 button{
     width: 40px;
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.buttons1 button img{
+    width: 30px;
 }
 
 .form-group{
