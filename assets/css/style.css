@@ -9,13 +9,13 @@
     position: relative;
 }
 .main .relleno{
-    background-color: #2f3c5e;
+    background-color: #011c6b;
     display: flex;
     flex: 1; /* Ocupa el espacio restante del contenedor */
     width: 35%;
 }
 .main form{
-    background-color: #2f3c5e;
+    background-color: #011c6b;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,6 +54,7 @@
 }
 
 .text-img{
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -63,32 +64,259 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .curva-footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+    position: absolute; /* Superpone la imagen dentro del div */
+    bottom: -20px; /* Ajusta la posición vertical de la imagen */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Compensa el desplazamiento para centrar */
+    z-index: -1; /* Envía la imagen al fondo para que el texto quede visible */
+    width: 101%; /* Ajusta el ancho de la imagen */
 }
 .bottom-view{
     height: 25px;
     display: flex;
     justify-content: space-around;
-    background-color: #2f3c5e;
+    background-color: #011c6b;
     color: #ffffff;
 }
 
 /* Estilos de la pagina de inicio */
 
 nav{
-    background-color: #2f3c5e;
+    background-color: #011c6b;
     color: #ffffff;
     height: 80px;
     border-radius: 0 0 10px 10px;
     box-shadow: 15px 0px 10px #070707;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
 }
 main{
     width: 100%;
     height: calc(100vh - 105px);
+}
+.main2{
+    background-image: url(../img/WEQW.png);
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    max-width: 100%;
+    position: relative;
+}
+.main2 .relleno{
+    position: relative;
+    display: flex;
+    flex: 1; /* Ocupa el espacio restante del contenedor */
+    width: 35%;
+    justify-content: center;
+}
+.inicio-img{
+    width: 65%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+}
+.butttons{
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-end; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    padding-right: 20px; 
+}
+.buttons button:nth-child(1) {
+    background-image: url('../img/1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.buttons button:nth-child(2) {
+    background-image: url('../img/2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.buttons button:nth-child(3) {
+    background-image: url('../img/3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.buttons button:nth-child(4) {
+    background-image: url('../img/4.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.buttons button:nth-child(5) {
+    background-image: url('../img/5.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.accions{
+    width: 280px;
+    height: 120px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #011c6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    padding-left: 90px;
+}
+.user{
+    position: absolute;
+    background-color: #011c6b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    z-index: 2;
+    height: 60%;
+    border-radius: 50px 50px 0 0;
+    padding: 50px;
+    bottom: 0;
+    right: 25px;
+}
+
+.user img{
+    margin-top: -300px;
+    width: 150px;
+}
+.form{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffefe;
+    border: #070707 3px solid;
+    width: 350px;
+    height: 35px;
+    border-radius: 15px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    color: #ffffff;
+}
+.carta button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+.formulario{
+    display: flex;
+    height: 200px;
+    width: 100%;
+}
+.formulario form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 5px; /* Espaciado entre columnas y filas */
+    width: 75%;
+}
+.buttons1{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.buttons img{
+    width: 40px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #070707;
+}
+.form-group input{
+    width: 80%; /* Asegura que el input ocupe todo el ancho de su contenedor */
+    padding: 5px;
+    border: 2px solid #0b0b0b;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.carta-img{
+    width: 65%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.table{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Estilo del encabezado */
+thead,th {
+    background-color: #3b6cb6; /* Color del encabezado */
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ddd; /* Bordes de las celdas */
+    padding: 8px;
+}
+
+/* Filas pares e impares */
+tr:nth-child(even) { /* Filas pares */
+    background-color: #cdd3ea;
+}
+
+tr:nth-child(odd) { /* Filas impares */
+    background-color: #e7e9f6;
+}
+
+/* Efecto hover */
+tr:hover {
+    background-color: #d0e7ff; /* Color al pasar el mouse */
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.print{
+    padding: 30px;
+}
+.print button{
+    margin-left: -30px;
+    background-color: #011c6b;
+    color: #ffffff;
+    height: 80px;
+    border-radius:10px;
+    box-shadow: 15px 0px 10px #070707;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    width: 100%;
+}
+.print img{
+    width: 75px;
+    
 }
