@@ -2,6 +2,10 @@
 // Verificar estatus de conexión
 include('../config/conexion.php');
 $estatus_servidor = isset($conn) ? "Conectado" : "Desconectado";
+// Obtener la fecha y hora actual
+$fecha_actual = date("l, d F Y");
+$hora_actual = date("h:i A");
+$ip_servidor = $_SERVER['SERVER_ADDR'];
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +40,7 @@ $estatus_servidor = isset($conn) ? "Conectado" : "Desconectado";
     </section>
     
     <footer class="bottom-view">
-        <p>Martes 23 de octubre 2024 / 13:30.</p> <p>Nombre de la Estación de Trabajo: </p>
+        <p><?php echo $fecha_actual; ?> / <?php echo $hora_actual; ?></p> <p>Nombre de la Estación de Trabajo: inicia sesion</p>
     </footer>
 </body>
 </html>

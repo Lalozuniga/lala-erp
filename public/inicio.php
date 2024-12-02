@@ -2,6 +2,13 @@
 // Verificar estatus de conexión
 include('../config/conexion.php');
 $estatus_servidor = isset($conn) ? "Conectado" : "Desconectado";
+// Obtener la fecha y hora actual
+$fecha_actual = date("l, d F Y");
+$hora_actual = date("h:i A");
+$ip_servidor = $_SERVER['SERVER_ADDR'];
+session_start();
+$usuario_actual = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : "Invitado";
+$estacion_trabajo = "Estación Principal"; // Puedes sustituirlo con un valor dinámico si es necesario
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +30,7 @@ $estatus_servidor = isset($conn) ? "Conectado" : "Desconectado";
                     </div>
                     
                 <div class="form">
-                    Texto random
+                <?php echo $usuario_actual; ?>
                 </div>
                 </div>
             </div>
@@ -44,7 +51,7 @@ $estatus_servidor = isset($conn) ? "Conectado" : "Desconectado";
 
     </main>
     <footer class="bottom-view">
-        <p>Martes 23 de octubre 2024 / 13:30.</p> <p>Nombre de la Estación de rabajo: </p> <p>IP Servidor Gestión:</p>
+        <p><?php echo $fecha_actual; ?> / <?php echo $hora_actual; ?>.</p> <p>Nombre de la Estación de rabajo: <?php echo $estacion_trabajo; ?></p> <p>IP Servidor Gestión: <?php echo $ip_servidor; ?></p>
     </footer>
 </body>
 </html>

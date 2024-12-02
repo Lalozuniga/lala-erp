@@ -1,5 +1,5 @@
 <?php
-include ("../../config/conexion.php");
+include("../../config/conexion.php");
 
 // Función para mostrar los datos de la base de datos en la tabla
 function mostrarDatos() {
@@ -13,9 +13,10 @@ function mostrarDatos() {
     // Obtener los resultados
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Imprimir las filas de la tabla
+    // Imprimir las filas de la tabla con una columna para seleccionar
     foreach ($result as $fila) {
         echo "<tr>";
+        echo "<td><input type='radio' name='registro_seleccionado' value='" . htmlspecialchars($fila['id']) . "'></td>";
         echo "<td>" . htmlspecialchars($fila['id']) . "</td>";
         echo "<td>" . htmlspecialchars($fila['operador']) . "</td>";
         echo "<td>" . htmlspecialchars($fila['placa_transporte']) . "</td>";
@@ -28,4 +29,3 @@ function mostrarDatos() {
         echo "</tr>";
     }
 }
-
